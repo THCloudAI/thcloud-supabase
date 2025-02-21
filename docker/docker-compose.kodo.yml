@@ -1,5 +1,6 @@
 services:
   storage:
+    container_name: ${PROJECT_NAME}-storage
     image: supabase/storage-api:v1.11.13
     depends_on:
       db:
@@ -48,6 +49,7 @@ services:
       - ./volumes/storage:/var/lib/storage:z
 
   imgproxy:
+    container_name: ${PROJECT_NAME}-imgproxy
     image: darthsim/imgproxy:v3.8.0
     healthcheck:
       test: [ "CMD", "imgproxy", "health" ]

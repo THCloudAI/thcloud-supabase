@@ -1,6 +1,7 @@
 services:
 
   minio:
+    container_name: ${PROJECT_NAME}-storage
     image: minio/minio
     ports:
       - '9000:9000'
